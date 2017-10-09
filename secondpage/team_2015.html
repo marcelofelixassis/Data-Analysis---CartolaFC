@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TIG 2017 | Cartola FC</title>
+
+  <!-- responsive screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <!-- style imports -->
+  <link rel="stylesheet" href="style/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="style/dist/css/AdminLTE.min.css">  
+  <link rel="stylesheet" href="style/dist/css/skins/_all-skins.min.css">
+
+  <link rel="stylesheet" href="style/style.css">
+  
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <a href="index.html" class="logo">
+      <span class="logo-mini"><b>TIG</b></span>
+      <span class="logo-lg">Cartola<b> TIG</b></span>
+    </a>
+    <nav class="navbar navbar-static-top">
+    </nav>
+  </header>
+
+  <!--##################### MENU SIDE #####################-->
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img id="imagemdoclube" src="">
+        </div>
+        <div class="pull-left info">
+          <p id="nomedotime"></p>
+          <i class="fa fa-circle text-success"></i>
+          <a id="nomedocartola"></a>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header" style="text-align: center;">NAVEGAÇÃO</li>
+
+        <li class="">
+          <a href="advanced_search.html">
+            <i class="fa fa-dashboard"></i> <span>Pesquisa Avançada</span>
+          </a>
+        </li>
+
+        <li class="">
+          <a href="vs.html">
+            <i class="fa fa-dashboard"></i> <span>Clube Vs. Clube</span>
+          </a>
+        </li>
+
+        <li class="">
+          <a href="advanced_search.html">
+            <i class="fa fa-dashboard"></i> <span>Pesquisa Avançada</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </aside>
+
+  <div class="content-wrapper">
+    <section class="content">
+      <div class="row">
+        <div class="col-md-8">
+          <div style="position:relative; top:0px; left:0px;">
+            <img src="style/campo.jpg" style="width: 830px;  height: 419px;">
+            <div id="jogadores"></div>
+          </div>
+        </div>
+      <div class="col-md-4">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Condensed Full Width Table</h3>
+            </div>
+            <div class="box-body no-padding">
+              <table class="table table-condensed"  style="height:377px;">
+                <tr>
+                  <td>FS</td>
+                  <td><span class="badge bg-green">Faltas Sofridas</span></td>
+                  <td>PE</td>
+                  <td><span class="badge bg-red">Passes Errados</span></td>
+                </tr>
+                <tr>
+                  <td>A</td>
+                  <td><span class="badge bg-green">Assistências</span></td>
+                  <td>FT</td>
+                  <td><span class="badge bg-green">Faltas na Trave</span></td>
+                </tr>
+                <tr>
+                  <td>FD</td>
+                  <td><span class="badge bg-green">Finalização Defendida</span></td>
+                  <td>FF</td>
+                  <td><span class="badge bg-green">Finalização Para Fora</span></td>
+                </tr>
+                <tr>
+                  <td>G</td>
+                  <td><span class="badge bg-green">Gol</span></td>
+                  <td>I</td>
+                  <td><span class="badge bg-red">Impedimento</span></td>
+                </tr>
+                <tr>
+                  <td>PP</td>
+                  <td><span class="badge bg-red">Pênaltis Perdidos</span></td>
+                  <td>RB</td>
+                  <td><span class="badge bg-green">Roubada de Bola</span></td>
+                </tr>
+                <tr>
+                  <td>FC</td>
+                  <td><span class="badge bg-red">Faltas Cometidas</span></td>
+                  <td>GC</td>
+                  <td><span class="badge bg-red">Gol Contra</span></td>
+                </tr>
+                <tr>
+                  <td>CA</td>
+                  <td><span class="badge bg-red">Cartão Amarelo</span></td>
+                  <td>CV</td>
+                  <td><span class="badge bg-red">Cartão Vermelho</span></td>
+                </tr>
+                <tr>
+                  <td>SG</td>
+                  <td><span class="badge bg-green">Jogo Sem Sofrer Gol</span></td>
+                  <td>DD</td>
+                  <td><span class="badge bg-green">Defesa Difícil</span></td>
+                </tr>
+                <tr>
+                  <td>DP</td>
+                  <td><span class="badge bg-green">Defesa Pênalti</span></td>
+                  <td>GS</td>
+                  <td><span class="badge bg-red">Gol Sofrido</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Melhores jogadores de 2015</h3>  
+            </div>
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover" id="best2015">
+                <tr>
+                  <th>Foto</th>
+                  <th>Nome</th>
+                  <th>FS</th>
+                  <th>PE</th>
+                  <th>A</th>
+                  <th>FT</th>
+                  <th>FD</th>
+                  <th>FF</th>
+                  <th>G</th>
+                  <th>I</th>
+                  <th>PP</th>
+                  <th>RB</th>
+                  <th>FC</th>
+                  <th>GC</th>
+                  <th>CA</th>
+                  <th>CV</th>
+                  <th>SG</th>
+                  <th>DD</th>
+                  <th>DP</th>
+                  <th>GS</th>
+                  <th style="color: red">Peso</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  
+  </div>
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Cartola FC</b>.
+    </div>
+    <strong>TIG - 2017</strong>
+  </footer> 
+</div>
+<!-- import scripts -->
+<script src="scripts/team2015.js"></script>
+<script src="scripts/jquery/dist/jquery.min.js"></script>
+</body>
+</html>
+
+
+
+
+  
