@@ -1,6 +1,7 @@
 var valor = 0;
 var valor2 = 0;
 var nomedoclube1, nomedoclube2;
+var tamanhotime1, tamanhotime2;
 
 window.onload = function(){
 	var obj = JSON.parse(localStorage.getItem("login"));
@@ -67,6 +68,7 @@ function comparar(){
 
 	pesquisajogadoresclube1();
 	pesquisajogadoresclube2();
+	
 
 	carregardadosparagrafico_time1(valor);
 	carregardadosparagrafico_time2(valor2);
@@ -74,12 +76,16 @@ function comparar(){
 	setTimeout(grafico, 3000);
 }
 
+
 function carregardadosparagrafico_time1(idclube){
 	$.ajax({
         method: "get",
         url: "http://localhost/cartolatig/secondpage/php/pegar_pesos_grafico.php?idclube="+idclube,    
         success: function(value){
-        	console.log(value);
+        	//var total1;
+        	// for(var i = 0; i < 5; i++){
+        	// 	total1 = total1 + value[i];
+        	// }
         	dados_clube1 = value;
         }
     });	
@@ -104,11 +110,13 @@ function pesquisajogadoresclube1(){
         url: "http://localhost/cartolatig/secondpage/php/get_atletas_clube.php?idclube="+valor,    
         success: function(value){
         	preencherlistclub1(value);
+
         }
     });
 }
 
 function preencherlistclub1(data){
+	tamanhotime1 = data.atletas.length;
 	for(var i = 0; i < data.atletas.length; i++){
 		var index = i + 1;
 		$("#clube1list tbody").append(
@@ -132,6 +140,7 @@ function pesquisajogadoresclube2(){
 }
 
 function preencherlistclub2(data){
+	tamanhotime2 = data.atletas.length;
 	for(var i = 0; i < data.atletas.length; i++){
 		var index = i + 1;
 		$("#clube2list tbody").append(
@@ -146,8 +155,8 @@ function preencherlistclub2(data){
 
 
 function grafico(){
-	console.log(dados_clube1);
-	console.log(dados_clube2);
+	var total1 = dados_clube1['somaatacante'] + dados_clube1['somameiocampo'] + dados_clube1['somalateral'] + dados_clube1['somazagueiro'] + dados_clube1['somagoleiro'];
+	var total2 = dados_clube2['somaatacante'] + dados_clube2['somameiocampo'] + dados_clube2['somalateral'] + dados_clube2['somazagueiro'] + dados_clube2['somagoleiro'];
     $(document).ready(function(){
         Highcharts.chart('container', {
 
@@ -177,7 +186,7 @@ function grafico(){
 		    },
 
 		    xAxis: {
-		        categories: ['Atacante', 'Meio Campo', 'Lateral', 'Zagueiro', 'Goleiro', ''],
+		        categories: ['Atacante', 'Meio Campo', 'Lateral', 'Zagueiro', 'Goleiro', 'Media'],
 		        tickmarkPlacement: 'on',
 		        lineWidth: 0
 		    },
@@ -209,11 +218,11 @@ function grafico(){
 
 		    series: [{
 		        name: nome_primeirotime,
-		        data: [dados_clube1['somaatacante'], dados_clube1['somameiocampo'], dados_clube1['somalateral'], dados_clube1['somazagueiro'], dados_clube1['somagoleiro'], 100],
+		        data: [dados_clube1['somaatacante'], dados_clube1['somameiocampo'], dados_clube1['somalateral'], dados_clube1['somazagueiro'], dados_clube1['somagoleiro'], total1/tamanhotime1],
 		        pointPlacement: 'on'
 		    }, {
 		        name: nome_segundotime,
-		        data: [dados_clube2['somaatacante'], dados_clube2['somameiocampo'], dados_clube2['somalateral'], dados_clube2['somazagueiro'], dados_clube2['somagoleiro'], 100],
+		        data: [dados_clube2['somaatacante'], dados_clube2['somameiocampo'], dados_clube2['somalateral'], dados_clube2['somazagueiro'], dados_clube2['somagoleiro'], total2/tamanhotime2],
 		        pointPlacement: 'on'
 		    }]
 		});
