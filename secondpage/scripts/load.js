@@ -2,7 +2,145 @@ var global_aux;
 var verification;
 var verification2;
 
+var obj_goleiro = [
+	{'value': 'total_peso', 'text': 'Geral'},
+	{'value' : 'total_gc', 'text': 'Gol Contra'},
+	{'value' : 'total_ca', 'text': 'Cartão Amarelo'},
+	{'value' : 'total_cv', 'text': 'Cartão Vermelho'},
+	{'value' : 'total_sg', 'text': 'Jogo Sem Sofrer Gol'},
+	{'value' : 'total_dd', 'text': 'Defesa Dificil'},
+	{'value' : 'total_dp', 'text': 'Defesa de Pênalti'},
+	{'value' : 'total_gs', 'text': 'Gol Sofrido'}
+];
 
+var obj_lateral = [
+	{'value': 'total_peso', 'text': 'Geral'},
+	{'value': 'total_fs', 'text': 'Faltas Sofridas'},
+	{'value' : 'total_pe', 'text': 'Passe Errado'},
+	{'value' : 'total_a', 'text': 'Assistência'},
+	{'value' : 'total_ft', 'text': 'Finalização na Trave'},
+	{'value' : 'total_fd', 'text': 'Finalização Defendida'},
+	{'value' : 'total_ff', 'text': 'Finalização Para Fora'},
+	{'value' : 'total_g', 'text': 'Gol'},
+	{'value' : 'total_pp', 'text': 'Pênaltis Perdidos'},
+	{'value' : 'total_rb', 'text': 'Roubadas de Bola'},
+	{'value' : 'total_fc', 'text': 'Faltas Cometidas'},
+	{'value' : 'total_gc', 'text': 'Gol Contra'},
+	{'value' : 'total_ca', 'text': 'Cartão Amarelo'},
+	{'value' : 'total_cv', 'text': 'Cartão Vermelho'},
+	{'value' : 'total_sg', 'text': 'Jogo Sem Sofrer Gol'},
+];
+
+var obj_zagueiro = [
+	{'value': 'total_peso', 'text': 'Geral'},
+	{'value': 'total_fs', 'text': 'Faltas Sofridas'},
+	{'value' : 'total_pe', 'text': 'Passe Errado'},
+	{'value' : 'total_a', 'text': 'Assistência'},
+	{'value' : 'total_ft', 'text': 'Finalização na Trave'},
+	{'value' : 'total_fd', 'text': 'Finalização Defendida'},
+	{'value' : 'total_ff', 'text': 'Finalização Para Fora'},
+	{'value' : 'total_g', 'text': 'Gol'},
+	{'value' : 'total_pp', 'text': 'Pênaltis Perdidos'},
+	{'value' : 'total_rb', 'text': 'Roubadas de Bola'},
+	{'value' : 'total_fc', 'text': 'Faltas Cometidas'},
+	{'value' : 'total_gc', 'text': 'Gol Contra'},
+	{'value' : 'total_ca', 'text': 'Cartão Amarelo'},
+	{'value' : 'total_cv', 'text': 'Cartão Vermelho'},
+	{'value' : 'total_sg', 'text': 'Jogo Sem Sofrer Gol'},
+];
+
+var obj_meiocampo = [
+	{'value': 'total_peso', 'text': 'Geral'},
+	{'value': 'total_fs', 'text': 'Faltas Sofridas'},
+	{'value' : 'total_pe', 'text': 'Passe Errado'},
+	{'value' : 'total_a', 'text': 'Assistência'},
+	{'value' : 'total_ft', 'text': 'Finalização na Trave'},
+	{'value' : 'total_fd', 'text': 'Finalização Defendida'},
+	{'value' : 'total_ff', 'text': 'Finalização Para Fora'},
+	{'value' : 'total_g', 'text': 'Gol'},
+	{'value' : 'total_i', 'text': 'Impedimento'},
+	{'value' : 'total_pp', 'text': 'Pênaltis Perdidos'},
+	{'value' : 'total_rb', 'text': 'Roubadas de Bola'},
+	{'value' : 'total_fc', 'text': 'Faltas Cometidas'},
+	{'value' : 'total_gc', 'text': 'Gol Contra'},
+	{'value' : 'total_ca', 'text': 'Cartão Amarelo'},
+	{'value' : 'total_cv', 'text': 'Cartão Vermelho'},
+	{'value' : 'total_sg', 'text': 'Jogo Sem Sofrer Gol'},
+];
+
+var obj_atacante = [
+	{'value': 'total_peso', 'text': 'Geral'},
+	{'value': 'total_fs', 'text': 'Faltas Sofridas'},
+	{'value' : 'total_pe', 'text': 'Passe Errado'},
+	{'value' : 'total_a', 'text': 'Assistência'},
+	{'value' : 'total_ft', 'text': 'Finalização na Trave'},
+	{'value' : 'total_fd', 'text': 'Finalização Defendida'},
+	{'value' : 'total_ff', 'text': 'Finalização Para Fora'},
+	{'value' : 'total_g', 'text': 'Gol'},
+	{'value' : 'total_i', 'text': 'Impedimento'},
+	{'value' : 'total_pp', 'text': 'Pênaltis Perdidos'},
+	{'value' : 'total_rb', 'text': 'Roubadas de Bola'},
+	{'value' : 'total_fc', 'text': 'Faltas Cometidas'},
+	{'value' : 'total_gc', 'text': 'Gol Contra'},
+	{'value' : 'total_ca', 'text': 'Cartão Amarelo'},
+	{'value' : 'total_cv', 'text': 'Cartão Vermelho'},
+	{'value' : 'total_sg', 'text': 'Jogo Sem Sofrer Gol'},
+];
+
+
+function change_select(){
+	var posicao = document.getElementById("posicao").value;
+	var x = document.getElementById("categoria");
+
+	if(posicao == 1){
+		for(var i = 0; i < obj_goleiro.length; i++){
+    		var option = document.createElement("option");
+    		option.text = obj_goleiro[i]["text"];
+    		option.value = obj_goleiro[i]["value"];
+    		x.add(option);
+		}
+	}
+
+	if(posicao == 2){
+		for(var i = 0; i < obj_lateral.length; i++){
+    		var option = document.createElement("option");
+    		option.text = obj_lateral[i]["text"];
+    		option.value = obj_lateral[i]["value"];
+    		x.add(option);
+		}
+	}
+
+	if(posicao == 3){
+		for(var i = 0; i < obj_zagueiro.length; i++){
+    		var option = document.createElement("option");
+    		option.text = obj_zagueiro[i]["text"];
+    		option.value = obj_zagueiro[i]["value"];
+    		x.add(option);
+		}
+	}
+
+	if(posicao == 4){
+		for(var i = 0; i < obj_meiocampo.length; i++){
+    		var option = document.createElement("option");
+    		option.text = obj_meiocampo[i]["text"];
+    		option.value = obj_meiocampo[i]["value"];
+    		x.add(option);
+		}
+	}
+
+	if(posicao == 5){
+		for(var i = 0; i < obj_atacante.length; i++){
+    		var option = document.createElement("option");
+    		option.text = obj_atacante[i]["text"];
+    		option.value = obj_atacante[i]["value"];
+    		x.add(option);
+		}
+	}
+}
+ var x = document.getElementById("mySelect");
+    var option = document.createElement("option");
+    option.text = "Kiwi";
+    x.add(option);
 window.onload = function(){
 	var obj = JSON.parse(localStorage.getItem("login"));
 	document.getElementById("nomedotime").innerHTML = obj.times[0].nome;
@@ -78,6 +216,9 @@ function preencher_top5asc(data){
     	verification2 = 1;
 	}
 }
+
+
+
 
 
 
