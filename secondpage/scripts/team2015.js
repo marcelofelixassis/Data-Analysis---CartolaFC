@@ -4,6 +4,7 @@ window.onload = function(){
 	document.getElementById("nomedocartola").innerHTML = obj.times[0].nome_cartola;
 	document.getElementById("imagemdoclube").src = obj.times[0].url_escudo_png;
 	loadbest();
+
 }
 
 function loadbest() {

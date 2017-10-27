@@ -3,6 +3,10 @@ var valor2 = 0;
 var nomedoclube1, nomedoclube2;
 var tamanhotime1, tamanhotime2;
 
+var qnt_goleiro1 = 0, qnt_lateral1 = 0, qnt_zagueiro1 = 0, qnt_meiocampo1 = 0, qnt_atacante1 = 0;
+var qnt_goleiro2 = 0, qnt_lateral2 = 0, qnt_zagueiro2 = 0, qnt_meiocampo2 = 0, qnt_atacante2 = 0;
+
+
 window.onload = function(){
 	var obj = JSON.parse(localStorage.getItem("login"));
 	document.getElementById("nomedotime").innerHTML = obj.times[0].nome;
@@ -12,6 +16,7 @@ window.onload = function(){
 }
 
 function getclubes(){
+	console.log("ersfd");
 	$.ajax({
         method: "get",
         url: "http://localhost/cartolatig/secondpage/php/selectall_vs_select.php",    
@@ -82,10 +87,6 @@ function carregardadosparagrafico_time1(idclube){
         method: "get",
         url: "http://localhost/cartolatig/secondpage/php/pegar_pesos_grafico.php?idclube="+idclube,    
         success: function(value){
-        	//var total1;
-        	// for(var i = 0; i < 5; i++){
-        	// 	total1 = total1 + value[i];
-        	// }
         	dados_clube1 = value;
         }
     });	
@@ -118,6 +119,23 @@ function pesquisajogadoresclube1(){
 function preencherlistclub1(data){
 	tamanhotime1 = data.atletas.length;
 	for(var i = 0; i < data.atletas.length; i++){
+		switch(data.atletas[i].posicao){
+			case "1":
+				qnt_goleiro1++;
+			break;
+			case "2":
+				qnt_lateral1++;
+			break;
+			case "3":
+				qnt_zagueiro1++;
+			break;
+			case "4":
+				qnt_meiocampo1++;
+			break;
+			case "5":
+				qnt_atacante1++;
+			break;
+		}
 		var index = i + 1;
 		$("#clube1list tbody").append(
 	      	"<tr>" +
@@ -142,6 +160,23 @@ function pesquisajogadoresclube2(){
 function preencherlistclub2(data){
 	tamanhotime2 = data.atletas.length;
 	for(var i = 0; i < data.atletas.length; i++){
+		switch(data.atletas[i].posicao){
+			case "1":
+				qnt_goleiro2++;
+			break;
+			case "2":
+				qnt_lateral2++;
+			break;
+			case "3":
+				qnt_zagueiro2++;
+			break;
+			case "4":
+				qnt_meiocampo2++;
+			break;
+			case "5":
+				qnt_atacante2++;
+			break;
+		}
 		var index = i + 1;
 		$("#clube2list tbody").append(
 	      	"<tr>" +
@@ -201,7 +236,7 @@ function grafico(){
 		        min: 5,
 		        endOnTick: true,
                 showLastLabel: true,
-                tickPositions: [100, 300, 500, 700, 1000]
+                tickPositions: [10, 40, 80, 120, 160]
 		    },
 
 		    tooltip: {
@@ -218,11 +253,21 @@ function grafico(){
 
 		    series: [{
 		        name: nome_primeirotime,
-		        data: [dados_clube1['somaatacante'], dados_clube1['somameiocampo'], dados_clube1['somalateral'], dados_clube1['somazagueiro'], dados_clube1['somagoleiro'], total1/tamanhotime1],
+		        data: [dados_clube1['somaatacante']/qnt_atacante1, 
+		        dados_clube1['somameiocampo']/qnt_meiocampo1, 
+		        dados_clube1['somalateral']/qnt_lateral1, 
+		        dados_clube1['somazagueiro']/qnt_zagueiro1, 
+		        dados_clube1['somagoleiro']/qnt_goleiro1, 
+		        total1/tamanhotime1],
 		        pointPlacement: 'on'
 		    }, {
 		        name: nome_segundotime,
-		        data: [dados_clube2['somaatacante'], dados_clube2['somameiocampo'], dados_clube2['somalateral'], dados_clube2['somazagueiro'], dados_clube2['somagoleiro'], total2/tamanhotime2],
+		        data: [dados_clube2['somaatacante']/qnt_atacante2,
+		         dados_clube2['somameiocampo']/qnt_meiocampo2, 
+		         dados_clube2['somalateral']/qnt_lateral2, 
+		         dados_clube2['somazagueiro']/qnt_zagueiro2, 
+		         dados_clube2['somagoleiro']/qnt_goleiro2, 
+		         total2/tamanhotime2],
 		        pointPlacement: 'on'
 		    }]
 		});

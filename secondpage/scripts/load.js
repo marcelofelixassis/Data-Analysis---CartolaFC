@@ -2,6 +2,13 @@ var global_aux;
 var verification;
 var verification2;
 
+window.onload = function(){
+	var obj = JSON.parse(localStorage.getItem("login"));
+	document.getElementById("nomedotime").innerHTML = obj.times[0].nome;
+	document.getElementById("nomedocartola").innerHTML = obj.times[0].nome_cartola;
+	document.getElementById("imagemdoclube").src = obj.times[0].url_escudo_png;
+}
+
 var obj_goleiro = [
 	{'value': 'total_peso', 'text': 'Geral'},
 	{'value' : 'total_gc', 'text': 'Gol Contra'},
@@ -137,10 +144,7 @@ function change_select(){
 		}
 	}
 }
- var x = document.getElementById("mySelect");
-    var option = document.createElement("option");
-    option.text = "Kiwi";
-    x.add(option);
+
 window.onload = function(){
 	var obj = JSON.parse(localStorage.getItem("login"));
 	document.getElementById("nomedotime").innerHTML = obj.times[0].nome;
@@ -216,11 +220,3 @@ function preencher_top5asc(data){
     	verification2 = 1;
 	}
 }
-
-
-
-
-
-
-
-function teste(){alert("asd");}

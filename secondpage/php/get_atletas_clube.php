@@ -5,7 +5,7 @@ $idclube = $_GET["idclube"];
 
 $conexao = mysqli_connect("localhost", "root", "","cartolafc");
 
-    $check = mysqli_query($conexao, "SELECT p.apelido, f.foto 
+    $check = mysqli_query($conexao, "SELECT p.apelido, f.foto, p.posicao_id 
         FROM atletas2015 p JOIN fotos f ON p.id = f.id 
         WHERE p.clube_id = '$idclube' ORDER by p.posicao_id ASC");
 
@@ -17,6 +17,7 @@ $conexao = mysqli_connect("localhost", "root", "","cartolafc");
             $atletas = array('atletas' => array());
             while($row=mysqli_fetch_array($check)){
                 $atletas['atletas'][$i]['apelido'] = utf8_encode($row['apelido']);
+                $atletas['atletas'][$i]['posicao'] = $row['posicao_id'];
                 $atletas['atletas'][$i]["foto"] = $row['foto'];
                 $i++;        
             }
