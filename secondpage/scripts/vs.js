@@ -15,6 +15,9 @@ window.onload = function(){
 	getclubes();
 }
 
+/*****************************************************************************
+ * That function provides the load of teams using 'preencher_select' function
+ ****************************************************************************/
 function getclubes(){
 	console.log("ersfd");
 	$.ajax({
@@ -25,6 +28,7 @@ function getclubes(){
         }
     });
 }
+
 
 function preencher_select(value){
 	select = document.getElementById('clube1');
@@ -61,7 +65,9 @@ var dados_clube1;
 var dados_clube2;
 
 
-
+/************************************************************************
+ * That function provides the comparison of teams using another functions
+ ***********************************************************************/
 function comparar(){
 	nome_primeirotime = document.getElementById("clube1").options[document.getElementById("clube1").selectedIndex].text;
 	document.getElementById("nomedoclube1").innerHTML = nome_primeirotime;
@@ -104,14 +110,12 @@ function carregardadosparagrafico_time2(idclube){
 }
 
 
-
 function pesquisajogadoresclube1(){
 	$.ajax({
         method: "get",
         url: "http://localhost/cartolatig/secondpage/php/get_atletas_clube.php?idclube="+valor,    
         success: function(value){
         	preencherlistclub1(value);
-
         }
     });
 }
@@ -188,7 +192,9 @@ function preencherlistclub2(data){
 	}
 }
 
-
+/***********************************************
+ * That function provides the comparison graphic
+ **********************************************/
 function grafico(){
 	var total1 = dados_clube1['somaatacante'] + dados_clube1['somameiocampo'] + dados_clube1['somalateral'] + dados_clube1['somazagueiro'] + dados_clube1['somagoleiro'];
 	var total2 = dados_clube2['somaatacante'] + dados_clube2['somameiocampo'] + dados_clube2['somalateral'] + dados_clube2['somazagueiro'] + dados_clube2['somagoleiro'];

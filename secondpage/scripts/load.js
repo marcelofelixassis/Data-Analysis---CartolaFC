@@ -10,7 +10,7 @@ window.onload = function(){
 }
 
 var obj_goleiro = [
-	{'value': 'total_peso', 'text': 'Geral'},
+	{'value' : 'total_peso', 'text': 'Geral'},
 	{'value' : 'total_gc', 'text': 'Gol Contra'},
 	{'value' : 'total_ca', 'text': 'Cartão Amarelo'},
 	{'value' : 'total_cv', 'text': 'Cartão Vermelho'},
@@ -21,8 +21,8 @@ var obj_goleiro = [
 ];
 
 var obj_lateral = [
-	{'value': 'total_peso', 'text': 'Geral'},
-	{'value': 'total_fs', 'text': 'Faltas Sofridas'},
+	{'value' : 'total_peso', 'text': 'Geral'},
+	{'value' : 'total_fs', 'text': 'Faltas Sofridas'},
 	{'value' : 'total_pe', 'text': 'Passe Errado'},
 	{'value' : 'total_a', 'text': 'Assistência'},
 	{'value' : 'total_ft', 'text': 'Finalização na Trave'},
@@ -39,8 +39,8 @@ var obj_lateral = [
 ];
 
 var obj_zagueiro = [
-	{'value': 'total_peso', 'text': 'Geral'},
-	{'value': 'total_fs', 'text': 'Faltas Sofridas'},
+	{'value' : 'total_peso', 'text': 'Geral'},
+	{'value' : 'total_fs', 'text': 'Faltas Sofridas'},
 	{'value' : 'total_pe', 'text': 'Passe Errado'},
 	{'value' : 'total_a', 'text': 'Assistência'},
 	{'value' : 'total_ft', 'text': 'Finalização na Trave'},
@@ -57,8 +57,8 @@ var obj_zagueiro = [
 ];
 
 var obj_meiocampo = [
-	{'value': 'total_peso', 'text': 'Geral'},
-	{'value': 'total_fs', 'text': 'Faltas Sofridas'},
+	{'value' : 'total_peso', 'text': 'Geral'},
+	{'value' : 'total_fs', 'text': 'Faltas Sofridas'},
 	{'value' : 'total_pe', 'text': 'Passe Errado'},
 	{'value' : 'total_a', 'text': 'Assistência'},
 	{'value' : 'total_ft', 'text': 'Finalização na Trave'},
@@ -76,8 +76,8 @@ var obj_meiocampo = [
 ];
 
 var obj_atacante = [
-	{'value': 'total_peso', 'text': 'Geral'},
-	{'value': 'total_fs', 'text': 'Faltas Sofridas'},
+	{'value' : 'total_peso', 'text': 'Geral'},
+	{'value' : 'total_fs', 'text': 'Faltas Sofridas'},
 	{'value' : 'total_pe', 'text': 'Passe Errado'},
 	{'value' : 'total_a', 'text': 'Assistência'},
 	{'value' : 'total_ft', 'text': 'Finalização na Trave'},
@@ -178,11 +178,11 @@ function pesquisaavancada_asc(){
 
 function preencher_top5desc(data){
 	if(verification == 1){
-	document.getElementById("top5").deleteRow(5);
-	document.getElementById("top5").deleteRow(4);
-	document.getElementById("top5").deleteRow(3);
-	document.getElementById("top5").deleteRow(2);
-	document.getElementById("top5").deleteRow(1);
+		document.getElementById("top5").deleteRow(5);
+		document.getElementById("top5").deleteRow(4);
+		document.getElementById("top5").deleteRow(3);
+		document.getElementById("top5").deleteRow(2);
+		document.getElementById("top5").deleteRow(1);
 	}
 	for(var i = 0; i < 6; i++){
 		var index = i + 1;
@@ -194,18 +194,18 @@ function preencher_top5desc(data){
 	        "<td>"+ data.atleta[i].total_peso +"</td>" +
 	      	"</tr>"
     	);
-    	verification = 1;
+    verification = 1;
 	}
 }
 
 
 function preencher_top5asc(data){
 	if(verification2 == 1){
-	document.getElementById("top5asc").deleteRow(5);
-	document.getElementById("top5asc").deleteRow(4);
-	document.getElementById("top5asc").deleteRow(3);
-	document.getElementById("top5asc").deleteRow(2);
-	document.getElementById("top5asc").deleteRow(1);
+		document.getElementById("top5asc").deleteRow(5);
+		document.getElementById("top5asc").deleteRow(4);
+		document.getElementById("top5asc").deleteRow(3);
+		document.getElementById("top5asc").deleteRow(2);
+		document.getElementById("top5asc").deleteRow(1);
 	}
 	for(var j = 0; j < 6; j++){
 		var index = j + 1;
@@ -217,6 +217,6 @@ function preencher_top5asc(data){
 	        "<td>"+ data.atleta[j].total_peso +"</td>" +
 	      	"</tr>"
     	);
-    	verification2 = 1;
+    verification2 = 1;
 	}
 }

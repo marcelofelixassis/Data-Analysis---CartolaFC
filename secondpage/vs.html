@@ -1,195 +1,187 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="shortcut icon" href="./style/icon.ico" type="image/x-icon">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TIG 2017 | Cartola FC</title>
+  <head>
+    <link rel="shortcut icon" href="./style/icon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- responsive screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>TIG 2017 | Cartola FC</title>
 
-  <!-- style imports -->
-  <link rel="stylesheet" href="style/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="style/Ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="style/dist/css/AdminLTE.min.css">  
-  <link rel="stylesheet" href="style/dist/css/skins/_all-skins.min.css">
+    <!-- responsive screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="stylesheet" href="style/style.css">
-  
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
+    <!-- style imports -->
+    <link rel="stylesheet" href="style/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="style/dist/css/AdminLTE.min.css">  
+    <link rel="stylesheet" href="style/dist/css/skins/_all-skins.min.css">
 
+    <link rel="stylesheet" href="style/style.css">
+    
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  </head>
 
+  <body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
 
+    <header class="main-header">
+      <a href="index.html" class="logo">
+        <span class="logo-mini"><b>TIG</b></span>
+        <span class="logo-lg">Cartola<b> TIG</b></span>
+      </a>
+      <nav class="navbar navbar-static-top">
+      </nav>
+    </header>
 
-
-
-
-
-
-
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-
-  <header class="main-header">
-    <a href="index.html" class="logo">
-      <span class="logo-mini"><b>TIG</b></span>
-      <span class="logo-lg">Cartola<b> TIG</b></span>
-    </a>
-    <nav class="navbar navbar-static-top">
-    </nav>
-  </header>
-
-  <!--##################### MENU SIDE #####################-->
-  <aside class="main-sidebar">
-    <section class="sidebar">
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img id="imagemdoclube" src="">
-        </div>
-        <div class="pull-left info">
-          <p id="nomedotime"></p>
-          <i class="fa fa-circle text-success"></i>
-          <a id="nomedocartola"></a>
-        </div>
-      </div>
- <ul class="sidebar-menu" data-widget="tree">
-        <li class="header" style="text-align: center;">NAVEGAÇÃO</li>
-
-        <li class="">
-          <a href="advanced_search.html">
-            <i class="fa fa-dashboard"></i> <span>Pesquisa Avançada</span>
-          </a>
-        </li>
-
-        <li class="">
-          <a href="vs.html">
-            <i class="fa fa-dashboard"></i> <span>Clube Vs. Clube</span>
-          </a>
-        </li>
-      </ul>
-      </ul>
-    </section>
-  </aside>
-
-
-  <!--##################### ADVANCED SEARCH #####################-->
-  <div class="content-wrapper">
-    <section class="content">
-      <div class="box box-default">
-        <div class="box-header with-border">
-          <h3 class="box-title">Clube Vs. Clube</h3>
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+    <!--##################### MENU SIDE #####################-->
+    <aside class="main-sidebar">
+      <section class="sidebar">
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img id="imagemdoclube" src="">
+          </div>
+          <div class="pull-left info">
+            <p id="nomedotime"></p>
+            <i class="fa fa-circle text-success"></i>
+            <a id="nomedocartola"></a>
           </div>
         </div>
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header" style="text-align: center;">NAVEGAÇÃO</li>
 
-        <div class="box-body">
+          <li class="">
+            <a href="advanced_search.html">
+              <i class="fa fa-dashboard"></i> <span>Pesquisa Avançada</span>
+            </a>
+          </li>
+
+          <li class="">
+            <a href="vs.html">
+              <i class="fa fa-dashboard"></i> <span>Clube Vs. Clube</span>
+            </a>
+          </li>
+        </ul>
+        </ul>
+      </section>
+    </aside>
+
+
+    <!--##################### ADVANCED SEARCH #####################-->
+    <div class="content-wrapper">
+      <section class="content">
+        <div class="box box-default">
+          <div class="box-header with-border">
+            <h3 class="box-title">Clube Vs. Clube</h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>
+          </div>
+
+          <div class="box-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Clube 1:</label>
+                  <select class="form-control select1" id="clube1" style="width: 100%;">
+                    <option value="">Selecione um clube</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Clube 2:</label>
+                  <select class="form-control select2" id="clube2" style="width: 100%;">
+                    <option value="">Selecione um clube</option>
+                  </select>
+                </div>
+              </div>
+            </div> 
+          </div>
+        
+          <!--##################### IMAGE CLUBE VS CLUBE #####################-->
+
+          <div class="row" style="text-align: center">
+            <div class="col-md-2 col-md-offset-3">
+              <img src="style/user.png" id="clube1img" class="imagemclube">     
+            </div>
+            <div class="col-md-2">
+              <img src="style/vs.png" class="imagemclube">     
+            </div>
+            <div class="col-md-2 ">
+              <img src="style/user.png" id="clube2img" class="imagemclube">                 
+            </div>
+          </div>
+
+          <div class="row" style="text-align: center; margin-top: 10px; padding-bottom: 10px;">
+          <button type="button" onclick="comparar();" class="btn btn-danger" id="comparar">Comparar!</button>
+        </div>
+
           <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Clube 1:</label>
-                <select class="form-control select1" id="clube1" style="width: 100%;">
-                  <option value="">Selecione um clube</option>
-                </select>
+            <div class="col-md-5 col-md-offset-1" >
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title" id="nomedoclube1"></h3>
+                </div>
+
+                <div class="box-body no-padding">
+                  <table class="table" id="clube1list">
+                    <tr>
+                      <th>#</th>
+                      <th>Foto</th>
+                      <th>Nome</th>
+                    </tr>
+                  </table>
+                </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Clube 2:</label>
-                <select class="form-control select2" id="clube2" style="width: 100%;">
-                  <option value="">Selecione um clube</option>
-                </select>
+
+            <div class="col-md-5">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title" id="nomedoclube2"></h3>
+                </div>
+
+                <div class="box-body no-padding">
+                  <table class="table" id="clube2list">
+                    <tr>
+                      <th>#</th>
+                      <th>Foto</th>
+                      <th>Nome</th>
+                    </tr> 
+                  </table>
+                </div>
               </div>
             </div>
           </div> 
+          
+        <div id="container" style="width: 83%; text-align: center; height: 400px; margin: 0 auto; padding-bottom: 20px;"></div>  
+          
         </div>
-       
-        <!--##################### IMAGE CLUBE VS CLUBE #####################-->
-
-        <div class="row" style="text-align: center">
-          <div class="col-md-2 col-md-offset-3">
-            <img src="style/user.png" id="clube1img" class="imagemclube">     
-          </div>
-          <div class="col-md-2">
-            <img src="style/vs.png" class="imagemclube">     
-          </div>
-          <div class="col-md-2 ">
-            <img src="style/user.png" id="clube2img" class="imagemclube">                 
-          </div>
-        </div>
-
-        <div class="row" style="text-align: center; margin-top: 10px; padding-bottom: 10px;">
-         <button type="button" onclick="comparar();" class="btn btn-danger" id="comparar">Comparar!</button>
-       </div>
-
-        <div class="row">
-          <div class="col-md-5 col-md-offset-1" >
-            <div class="box">
-              <div class="box-header">
-                <h3 class="box-title" id="nomedoclube1"></h3>
-              </div>
-
-              <div class="box-body no-padding">
-                <table class="table" id="clube1list">
-                  <tr>
-                    <th>#</th>
-                    <th>Foto</th>
-                    <th>Nome</th>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-5">
-            <div class="box">
-              <div class="box-header">
-                <h3 class="box-title" id="nomedoclube2"></h3>
-              </div>
-
-              <div class="box-body no-padding">
-                <table class="table" id="clube2list">
-                  <tr>
-                    <th>#</th>
-                    <th>Foto</th>
-                    <th>Nome</th>
-                  </tr> 
-                </table>
-              </div>
-            </div>
-          </div>
-        </div> 
-        
-      <div id="container" style="width: 83%; text-align: center; height: 400px; margin: 0 auto; padding-bottom: 20px;"></div>  
-        
-      </div>
-    </section> 
-  </div>
-
-
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Cartola FC</b>.
+      </section> 
     </div>
-    <strong>TIG - 2017</strong>
-  </footer> 
-</div>
-<!-- import scripts -->
-<script src="scripts/load.js"></script>
-<script src="scripts/jquery/dist/jquery.min.js"></script>
-<script src="scripts/vs.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="scripts/highcharts.js"></script>
-<script src="scripts/highcharts-more.js"></script>
-<script src="scripts/exporting.js"></script>
-<script type="text/javascript">
+
+
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Cartola FC</b>.
+      </div>
+      <strong>TIG - 2017</strong>
+    </footer> 
+  </div>
+  <!-- import scripts -->
+  <script src="scripts/load.js"></script>
+  <script src="scripts/jquery/dist/jquery.min.js"></script>
+  <script src="scripts/vs.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="scripts/highcharts.js"></script>
+  <script src="scripts/highcharts-more.js"></script>
+  <script src="scripts/exporting.js"></script>
+  <script type="text/javascript">
 
 
 
-    </script>
-</body>
+      </script>
+  </body>
 </html>

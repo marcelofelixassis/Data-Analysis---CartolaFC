@@ -1,2 +1,2 @@
 # Data-Analysis---CartolaFC
-Analysis of catolafc data for the years 2015/2016. 
+Analysis of catolafc data of 2015/2016. 

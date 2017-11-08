@@ -2,8 +2,11 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+
 <script src="js/login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- That script do the validation of user and if it's true the page is ready to go foward -->
 <script>
 $(document).ready(function(){
   var nomedocartoleiro = $("#nomedocartoleiro");
@@ -17,24 +20,28 @@ $(document).ready(function(){
     });
 });
 </script>
+
+<!-- Here we generate the login form to performance the functions above -->
 <div class="main">
-    <div class="container">
-      <center>
-         <div class="middle">
-            <div id="login">
-               <form>
-                  <fieldset class="clearfix">
-                     <p><span class="fa fa-futbol-o"></span><input type="text"  Placeholder="Nome Cartoleiro" id="nomedocartoleiro" required></p> 
-                     <div>
-                       <button type="button" id="entrar" class="btn btn-primary">ENTRAR</button>
-                     </div>
-                  </fieldset>
-                  <div class="clearfix"></div>
-               </form>
-               <div class="clearfix"></div>
-            </div> <!-- end login -->
-            <img src="logo.png" height="100" width="100">
-         </div>
-      </center>
-   </div>
+  <div class="container">
+    <center>
+      <div class="middle">
+        <div id="login">
+          <form>
+
+            <fieldset class="clearfix">
+              <p><span class="fa fa-futbol-o"></span><input type="text" Placeholder="Nome Cartoleiro" id="nomedocartoleiro" required></p> 
+                <div>
+                  <button type="button" id="entrar" class="btn btn-primary">ENTRAR</button>
+                </div>
+            </fieldset>
+
+            <div class="clearfix"></div>
+          </form>
+          <div class="clearfix"></div>
+        </div> <!-- end div login -->
+        <img src="logo.png" height="100" width="100">
+      </div>
+    </center>
+  </div>
 </div>

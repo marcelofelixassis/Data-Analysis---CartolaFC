@@ -1,176 +1,175 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="shortcut icon" href="./style/icon.ico" type="image/x-icon">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TIG 2017 | Cartola FC</title>
+  <head>
+    <link rel="shortcut icon" href="./style/icon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TIG 2017 | Cartola FC</title>
 
-  <!-- responsive screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- responsive screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <!-- style imports -->
-  <link rel="stylesheet" href="style/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="style/Ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="style/dist/css/AdminLTE.min.css">  
-  <link rel="stylesheet" href="style/dist/css/skins/_all-skins.min.css">
+    <!-- style imports -->
+    <link rel="stylesheet" href="style/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="style/dist/css/AdminLTE.min.css">  
+    <link rel="stylesheet" href="style/dist/css/skins/_all-skins.min.css">
 
-  <link rel="stylesheet" href="style/style.css">
-  
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
+    <link rel="stylesheet" href="style/style.css">
+    
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  </head>
+
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <a href="index.html" class="logo">
+          <span class="logo-mini"><b>TIG</b></span>
+          <span class="logo-lg">Cartola<b> TIG</b></span>
+        </a>
+        <nav class="navbar navbar-static-top">
+        </nav>
+      </header>
+
+      <!--##################### MENU SIDE #####################-->
+      <aside class="main-sidebar">
+        <section class="sidebar">
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img id="imagemdoclube" src="">
+            </div>
+            <div class="pull-left info">
+              <p id="nomedotime"></p>
+              <i class="fa fa-circle text-success"></i>
+              <a id="nomedocartola"></a>
+            </div>
+          </div>
+
+          <ul class="sidebar-menu" data-widget="tree">
+            <li class="header" style="text-align: center;">NAVEGAÇÃO</li>
+
+            <li class="">
+              <a href="advanced_search.html">
+                <i class="fa fa-dashboard"></i> <span>Pesquisa Avançada</span>
+              </a>
+            </li>
+
+            <li class="">
+              <a href="vs.html">
+                <i class="fa fa-dashboard"></i> <span>Clube Vs. Clube</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </aside>
 
 
+      <!--##################### ADVANCED SEARCH #####################-->
+      <div class="content-wrapper">
+        <section class="content">
+          <div class="box box-default">
+            <div class="box-header with-border">
+              <h3 class="box-title">Pesquisa Avançada</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+              </div>
+            </div>
 
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+            <div class="box-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Posição:</label>
+                    <select class="form-control select2" id="posicao" style="width: 100%;" onblur="change_select();">
+                      <option value="1">Goleiro</option>
+                      <option value="3">Zagueiro</option>
+                      <option value="2">Lateral</option>
+                      <option value="4">Meio Campo</option>
+                      <option value="5">Atacante</option>
+                    </select>
+                  </div>
+                  <button type="button" onclick="pesquisaavancada_desc(); pesquisaavancada_asc()" class="btn btn-primary">Pesquisar...</button>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Categoria:</label>
+                    <select class="form-control select2" id="categoria" style="width: 100%;">
+                    </select>
+                  </div>
+                  <!-- <div class="container">
+                    <form>
+                      <label class="radio-inline">
+                        <input type="radio" name="ano" value="2015">2015
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="ano" value="2016">2016
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="ano" value="15/16">15/16
+                      </label>
+                    </form>
+                  </div> -->
+                </div>
+              </div> 
+            </div>
+          
+            <!--##################### ADVANCED SEARCH LIST #####################-->
+            <div class="row">
+              <div class="col-md-5 col-md-offset-1" >
+                <div class="box">
+                  <div class="box-header">
+                    <h3 class="box-title">Top 5 melhores jogadores</h3>
+                  </div>
 
-  <header class="main-header">
-    <a href="index.html" class="logo">
-      <span class="logo-mini"><b>TIG</b></span>
-      <span class="logo-lg">Cartola<b> TIG</b></span>
-    </a>
-    <nav class="navbar navbar-static-top">
-    </nav>
-  </header>
+                  <div class="box-body no-padding">
+                    <table class="table" id="top5">
+                      <tr>
+                        <th>#</th>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Pontos</th>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
 
-  <!--##################### MENU SIDE #####################-->
-  <aside class="main-sidebar">
-    <section class="sidebar">
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img id="imagemdoclube" src="">
-        </div>
-        <div class="pull-left info">
-          <p id="nomedotime"></p>
-          <i class="fa fa-circle text-success"></i>
-          <a id="nomedocartola"></a>
-        </div>
+              <div class="col-md-5">
+                <div class="box">
+                  <div class="box-header">
+                    <h3 class="box-title">Top 5 piores jogadores</h3>
+                  </div>
+
+                  <div class="box-body no-padding">
+                    <table class="table" id="top5asc">
+                      <tr>
+                        <th>#</th>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Pontos</th>
+                      </tr> 
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </section>  
       </div>
 
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header" style="text-align: center;">NAVEGAÇÃO</li>
-
-        <li class="">
-          <a href="advanced_search.html">
-            <i class="fa fa-dashboard"></i> <span>Pesquisa Avançada</span>
-          </a>
-        </li>
-
-        <li class="">
-          <a href="vs.html">
-            <i class="fa fa-dashboard"></i> <span>Clube Vs. Clube</span>
-          </a>
-        </li>
-      </ul>
-    </section>
-  </aside>
-
-
-  <!--##################### ADVANCED SEARCH #####################-->
-  <div class="content-wrapper">
-    <section class="content">
-      <div class="box box-default">
-        <div class="box-header with-border">
-          <h3 class="box-title">Pesquisa Avançada</h3>
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+        <footer class="main-footer">
+          <div class="pull-right hidden-xs">
+            <b>Cartola FC</b>.
           </div>
-        </div>
-
-        <div class="box-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Posição:</label>
-                <select class="form-control select2" id="posicao" style="width: 100%;" onblur="change_select();">
-                  <option value="1">Goleiro</option>
-                  <option value="3">Zagueiro</option>
-                  <option value="2">Lateral</option>
-                  <option value="4">Meio Campo</option>
-                  <option value="5">Atacante</option>
-                </select>
-              </div>
-              <button type="button" onclick="pesquisaavancada_desc(); pesquisaavancada_asc()" class="btn btn-primary">Pesquisar...</button>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Categoria:</label>
-                <select class="form-control select2" id="categoria" style="width: 100%;">
-                </select>
-              </div>
-         <!-- <div class="container">
-                <form>
-                  <label class="radio-inline">
-                    <input type="radio" name="ano" value="2015">2015
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="ano" value="2016">2016
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="ano" value="15/16">15/16
-                  </label>
-                </form>
-              </div> -->
-            </div>
-          </div> 
-        </div>
-       
-        <!--##################### ADVANCED SEARCH LIST #####################-->
-        <div class="row">
-          <div class="col-md-5 col-md-offset-1" >
-            <div class="box">
-              <div class="box-header">
-                <h3 class="box-title">Top 5 melhores jogadores</h3>
-              </div>
-
-              <div class="box-body no-padding">
-                <table class="table" id="top5">
-                  <tr>
-                    <th>#</th>
-                    <th>Foto</th>
-                    <th>Nome</th>
-                    <th>Pontos</th>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-5">
-            <div class="box">
-              <div class="box-header">
-                <h3 class="box-title">Top 5 piores jogadores</h3>
-              </div>
-
-              <div class="box-body no-padding">
-                <table class="table" id="top5asc">
-                  <tr>
-                    <th>#</th>
-                    <th>Foto</th>
-                    <th>Nome</th>
-                    <th>Pontos</th>
-                  </tr> 
-                </table>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div>
-    </section>  
-  </div>
-
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Cartola FC</b>.
+          <strong>TIG - 2017</strong>
+        </footer> 
     </div>
-    <strong>TIG - 2017</strong>
-  </footer> 
-</div>
-<!-- import scripts -->
-<script src="scripts/load.js"></script>
-<script src="scripts/jquery/dist/jquery.min.js"></script>
-</body>
+    <!-- import scripts -->
+    <script src="scripts/load.js"></script>
+    <script src="scripts/jquery/dist/jquery.min.js"></script>
+
+  </body>
 </html>
